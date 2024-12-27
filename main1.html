@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Number guessing game</title>
+    <link rel="stylesheet" href="style.css">
+  </head> 
+  <body>
+    <header>
+      <h1>NEZHAYU</h1>
+      <bttns>
+        <button id="leave">Leave</button>
+        <button id="menu">Menu</button>
+      </bttns>
+    </header>
+
+    <main> 
+      <h2>Profile</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga voluptates laboriosam hic, nemo beatae veniam inventore sit blanditiis corrupti rem nam magni nesciunt laudantium tempore quam eos itaque et minus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore iste earum voluptatem corrupti, doloribus odio eum blanditiis adipisci autem? Debitis dolor beatae dolorem voluptatibus id vero iure a praesentium aliquid.</p>
+    </main>
+    <regl id="popup">
+      <p id="t">Sign in</p>
+      <input type="text" name="email" id="pole">
+      <input type="text" name="password" id="pole">
+      <span>
+        <button id="btn" >Sign in</button>
+        <button id="close">Cancel</button>  
+      </span>
+      
+    </regl>
+    <script>
+        const leave1 = document.getElementById('leave');
+        leave1.addEventListener('click', () => {
+            window.location.href = 'main.html';
+        });
+    </script>
+  </body> 
+</html> 
