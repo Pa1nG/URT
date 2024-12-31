@@ -1,3 +1,4 @@
+/* Общие стили */
 @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Roboto+Slab:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
@@ -9,6 +10,7 @@
 body, html {
     width: 100%;
     height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 a {
@@ -35,29 +37,23 @@ hr {
     margin: 1em 0;
 }
 
+/* Стили шапки */
 header {
-    float: left;
+    display: flex;
+    justify-content: space-around;
     background-color: rgba(26, 26, 26, 0.781);
-    width: 99.4%;
+    width: 100%;
     padding: 0.3%;
     color: #052658;
     border-bottom: 5px solid #59595a;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
-header > div#logo > a > img {
-    width: 40px;
-    height: 40px;
-    float: left;
-    margin-left: 15%;
-}
-
-header > div#logo1 > a > img {
-    width: 40px;
-    height: 40px;
-    float: left;
-    margin-left: 15%;
-}
-
+header > div#logo > a > img,
+header > div#logo1 > a > img,
 header > div#logo2 > a > img {
     width: 40px;
     height: 40px;
@@ -65,18 +61,18 @@ header > div#logo2 > a > img {
     margin-left: 15%;
 }
 
-header > div#logo > a > span {
-    font-size: 1.5em;
-    margin-left: 20px;
-    font-family: "Dela Gothic One", sans-serif;
-}
-
+header > div#logo > a > span,
 header > div#logo1 > a > span {
     font-size: 1.5em;
     margin-left: 20px;
     font-family: "Dela Gothic One", sans-serif;
 }
 
+#menu-toggle {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+}
 
 @media (min-width: 1325px) {
     #logo {
@@ -84,11 +80,7 @@ header > div#logo1 > a > span {
         width: 30%;
     }
     
-    #logo1 {
-        visibility: hidden;
-        display: none;
-    }
-
+    #logo1,
     #logo2 {
         visibility: hidden;
         display: none;
@@ -110,11 +102,7 @@ header > div#logo1 > a > span {
         width: 44%;
     }
     
-    #logo1 {
-        visibility: hidden;
-        display: none;
-    }
-        
+    #logo1,
     #logo2 {
         visibility: hidden;
         display: none;
@@ -129,18 +117,30 @@ header > div#logo1 > a > span {
         float: right;
         width: 30%;
     }
-
-
 }
 
-@media (max-width: 949px) and (min-width: 525px) {
+@media (max-width: 949px) {
+
+    #map {
+        display: flex;
+        justify-content: flex-end;
+        width: 85%;
+    }
+
+    #content {
+        margin-top: -10px;
+    }
+    
     #logo {
         visibility: hidden;
         display: none;
     }
     
     #logo1 {
-        float: left;
+        margin-top: 5px;
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 10px;
         width: 50%;
     }
         
@@ -150,49 +150,22 @@ header > div#logo1 > a > span {
     }
 
     #about {
-        float: left;
-        width: 50%;
+        margin-left: 1px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
     }
-    
 
     #theme {
-        float: right;
-        width: 30%;
-    }
-
-}
-
-@media (max-width: 524px) {
-    #logo {
-        visibility: hidden;
-        display: none;
-    }
-    
-    #logo1 {
-        visibility: hidden;
-        display: none;
-    }
-
-    #logo2 {
-        float: left;
-        width: 10%;
-    }
-
-    #about {
-        visibility: hidden;
-        display: none;
-    }
-
-    #menu {
-        float: right;
-        width: 30%;
-    }
-    
-    #theme {
-        float: right;
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 10px;
+        margin-bottom: 10px;
         width: 50%;
     }
 }
+
+
 
 #theme>a {
     margin-top: 10px;
@@ -218,15 +191,15 @@ header > div#logo1 > a > span {
     padding-top: 10px;
 }
 
-
 #about > a {
     margin: 0 5%;
 }
 
-wrapper {
+#wrapper {
     display: flex;
     flex-direction: column;
     height: 100%;
+    padding-top: 70px; /* Add padding to prevent content from being hidden under the fixed header */
 }
 
 footer {
@@ -247,7 +220,7 @@ footer {
 
 #sitename > h1 {
     font-family: "Merriweather", serif;
-    font-size: 2.5em
+    font-size: 2.5em;
 }
 
 #sitename > h3 {
@@ -258,13 +231,7 @@ footer {
     width: 100%;
 }
 
-#gallery1 {
-    color: #ccc;
-    font-family: "Dela Gothic One", sans-serif;
-    margin-top: 50px;
-    margin-left: 30px;
-}
-
+#gallery1,
 #contacts1 {
     color: #ccc;
     font-family: "Dela Gothic One", sans-serif;
@@ -274,6 +241,7 @@ footer {
 
 .dubble_block {
     display: flex;
+    flex-wrap: wrap; /* Ensure elements wrap on smaller screens */
 }
 
 #map {
@@ -290,18 +258,14 @@ footer {
 #about_team {
     margin-left: 30px;
     color: #ccc;
-    float: left;
-    width: 50%;
-    display: inline-block;
+    flex: 1; /* Allow elements to resize based on screen width */
 }
 
 #photosabout {
     margin-left: 10%;
     margin-right: 5px;
     color: #ccc;
-    float: right;
-    width: 50%;
-    display: inline-block;
+    flex: 1; /* Allow elements to resize based on screen width */
 }
 
 #contacts {
@@ -312,7 +276,7 @@ footer {
     margin-top: 10px;
 }
 
-#about_team > h1{
+#about_team > h1 {
     font-family: "Dela Gothic One", sans-serif;
 }
 
@@ -338,12 +302,13 @@ footer {
     margin-top: 1rem;
     margin-bottom: 1rem;
     padding-left: 0;
-  }
-  .social-icons>li {
-    margin-left: ;
+}
+
+.social-icons>li {
     margin-right: 0.25rem;
-  }
-  .social-icons a {
+}
+
+.social-icons a {
     position: relative;
     background-color: #eee;
     display: block;
@@ -355,11 +320,13 @@ footer {
     width: 2.5rem;
     height: 2.5rem;
     border-radius: .25rem;
-  }
-  .social-icons a:hover {
+}
+
+.social-icons a:hover {
     background-color: #e0e0e0;
-  }
-  .social-icons a::before {
+}
+
+.social-icons a::before {
     content: "";
     position: absolute;
     width: 1.2rem;
@@ -368,17 +335,19 @@ footer {
     top: .65rem;
     background: transparent no-repeat center center;
     background-size: 100% 100%;
-  }
-  
-  .social-icons .social-icon-vk::before {
+}
+
+.social-icons .social-icon-vk::before {
     background-image: url("https://cdn-icons-png.flaticon.com/128/6422/6422212.png");
-  }
-  .social-icons .social-icon-telegram::before {
+}
+
+.social-icons .social-icon-telegram::before {
     background-image: url("https://cdn-icons-png.flaticon.com/128/6422/6422206.png");
-  }
-  .social-icons .social-icon-youtube::before {
+}
+
+.social-icons .social-icon-youtube::before {
     background-image: url("https://cdn-icons-png.flaticon.com/128/6422/6422215.png");
-  }
+}
 
 .video-background {
     position: fixed;
@@ -390,7 +359,6 @@ footer {
     height: auto;
     z-index: -1000;
     overflow: hidden;
-    
 }
 
 #myVideo {
@@ -398,5 +366,7 @@ footer {
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire area */
     z-index: -100;
 }
