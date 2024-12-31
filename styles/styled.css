@@ -1,4 +1,4 @@
-/* Общие стили */
+
 @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Roboto+Slab:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
@@ -10,7 +10,7 @@
 body, html {
     width: 100%;
     height: 100%;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden; 
 }
 
 a {
@@ -37,7 +37,7 @@ hr {
     margin: 1em 0;
 }
 
-/* Стили шапки */
+
 header {
     display: flex;
     justify-content: space-around;
@@ -74,29 +74,18 @@ header > div#logo1 > a > span {
     cursor: pointer;
 }
 
-@media (min-width: 1325px) {
-    #logo {
-        float: left;
-        width: 30%;
+
+@media (min-width: 997px) {
+    
+    #content {
+        margin-top: -20px;
+    }
+
+    .dubble_block {
+        display: flex;
+        justify-content: space-b;
     }
     
-    #logo1,
-    #logo2 {
-        visibility: hidden;
-        display: none;
-    }
-
-    #about {
-        float: left;
-        width: 37%;
-    }
-    #theme {
-        float: right;
-        width: 30%;
-    }
-}
-
-@media (max-width: 1324px) and (min-width: 950px) {
     #logo {
         float: left;
         width: 44%;
@@ -119,11 +108,11 @@ header > div#logo1 > a > span {
     }
 }
 
-@media (max-width: 949px) {
+@media (max-width: 996px) and (min-width: 401px) {
 
     #map {
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
         width: 85%;
     }
 
@@ -165,6 +154,63 @@ header > div#logo1 > a > span {
     }
 }
 
+@media (max-width: 400px) {
+
+    .dubble_block {
+        display: block;
+    }
+
+    #photosabout {
+        justify-content: center;
+    }
+
+    #map {
+        display: flex;
+        justify-content: flex-end;
+        width: 85%;
+    }
+
+    #content {
+        margin-top: -10px;
+    }
+    
+    #logo {
+        visibility: hidden;
+        display: none;
+    }
+    
+    #logo1 {
+        margin-top: 5px;
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 10px;
+        width: 50%;
+    }
+        
+    #logo2 {
+        visibility: hidden;
+        display: none;
+    }
+
+    #lang {
+        display: none;
+    }
+
+    #about {
+        margin-left: 1px;
+        display: flex;
+        justify-content: center;
+        width: 50%;
+    }
+
+    #theme {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        width: 50%;
+    }
+}
 
 
 #theme>a {
@@ -199,10 +245,10 @@ header > div#logo1 > a > span {
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding-top: 70px; /* Add padding to prevent content from being hidden under the fixed header */
+    padding-top: 70px; 
 }
 
-footer {
+#mainn {
     float: left;
     background-color: rgba(0, 0, 0, 0.432);
     width: 99.4%;
@@ -239,14 +285,11 @@ footer {
     margin-left: 30px;
 }
 
-.dubble_block {
-    display: flex;
-    flex-wrap: wrap; /* Ensure elements wrap on smaller screens */
-}
 
 #map {
     margin-top: 20px;
     margin-left: 30px;
+    width: 90%;
 }
 
 .link1 {
@@ -258,18 +301,19 @@ footer {
 #about_team {
     margin-left: 30px;
     color: #ccc;
-    flex: 1; /* Allow elements to resize based on screen width */
+    flex: 1; 
 }
 
 #photosabout {
     margin-left: 10%;
     margin-right: 5px;
     color: #ccc;
-    flex: 1; /* Allow elements to resize based on screen width */
+    flex: 1; 
 }
 
 #contacts {
-    margin-left: 10%;
+    margin-left: 20px;
+    margin-right: 20%;
 }
 
 #photosabout > img {
@@ -287,6 +331,7 @@ footer {
 
 #qwert2 {
     margin-top: 50px;
+    margin-bottom: 50px;
     font-family: "Dela Gothic One", sans-serif;
 }
 
@@ -349,6 +394,7 @@ footer {
     background-image: url("https://cdn-icons-png.flaticon.com/128/6422/6422215.png");
 }
 
+
 .video-background {
     position: fixed;
     right: 0;
@@ -367,6 +413,45 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the video covers the entire area */
+    object-fit: cover; 
     z-index: -100;
 }
+
+#footer {
+    
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 10px;
+    margin-left: -5px;
+    background-color: rgba(0, 0, 0, 0.767);
+    width: 100%;
+}
+#pipec {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    margin: 12px;
+    height: 30px;
+    width: 60px;
+    border-radius: 10px;
+    background: #333;
+    justify-content: center;
+    box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #444,
+        inset -5px -5px 10px #222;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    color: rgb(161, 161, 161);  
+}
+
+button:hover {
+    box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222,
+    inset -5px -5px 10px #444;
+    transform: translateY(-3px);
+}
+
