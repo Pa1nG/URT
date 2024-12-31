@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Roboto+Slab:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
@@ -9,6 +10,7 @@
 body, html {
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
 }
 
 a {
@@ -35,29 +37,23 @@ hr {
     margin: 1em 0;
 }
 
+
 header {
-    float: left;
-    background-color: rgba(245, 245, 245, 0.781);
-    width: 99.4%;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(26, 26, 26, 0.781);
+    width: 100%;
     padding: 0.3%;
-    color: #052658;
+    color: rgba(245, 245, 245, 0.781);
     border-bottom: 5px solid #59595a;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
-header > div#logo > a > img {
-    width: 40px;
-    height: 40px;
-    float: left;
-    margin-left: 15%;
-}
-
-header > div#logo1 > a > img {
-    width: 40px;
-    height: 40px;
-    float: left;
-    margin-left: 15%;
-}
-
+header > div#logo > a > img,
+header > div#logo1 > a > img,
 header > div#logo2 > a > img {
     width: 40px;
     height: 40px;
@@ -65,56 +61,37 @@ header > div#logo2 > a > img {
     margin-left: 15%;
 }
 
-header > div#logo > a > span {
-    font-size: 1.5em;
-    margin-left: 20px;
-    font-family: "Dela Gothic One", sans-serif;
-}
-
+header > div#logo > a > span,
 header > div#logo1 > a > span {
     font-size: 1.5em;
     margin-left: 20px;
     font-family: "Dela Gothic One", sans-serif;
 }
 
-
-@media (min-width: 1325px) {
-    #logo {
-        float: left;
-        width: 30%;
-    }
-    
-    #logo1 {
-        visibility: hidden;
-        display: none;
-    }
-
-    #logo2 {
-        visibility: hidden;
-        display: none;
-    }
-
-    #about {
-        float: left;
-        width: 37%;
-    }
-    #theme {
-        float: right;
-        width: 30%;
-    }
+#menu-toggle {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
 }
 
-@media (max-width: 1324px) and (min-width: 950px) {
+
+@media (min-width: 997px) {
+    
+    #content {
+        margin-top: -20px;
+    }
+
+    .dubble_block {
+        display: flex;
+        justify-content: space-b;
+    }
+    
     #logo {
         float: left;
         width: 44%;
     }
     
-    #logo1 {
-        visibility: hidden;
-        display: none;
-    }
-        
+    #logo1,
     #logo2 {
         visibility: hidden;
         display: none;
@@ -129,18 +106,30 @@ header > div#logo1 > a > span {
         float: right;
         width: 30%;
     }
-
-
 }
 
-@media (max-width: 949px) and (min-width: 525px) {
+@media (max-width: 996px) and (min-width: 401px) {
+
+    #map {
+        display: flex;
+        justify-content: center;
+        width: 85%;
+    }
+
+    #content {
+        margin-top: -10px;
+    }
+    
     #logo {
         visibility: hidden;
         display: none;
     }
     
     #logo1 {
-        float: left;
+        margin-top: 5px;
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 10px;
         width: 50%;
     }
         
@@ -150,49 +139,79 @@ header > div#logo1 > a > span {
     }
 
     #about {
-        float: left;
-        width: 50%;
+        margin-left: 1px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
     }
-    
 
     #theme {
-        float: right;
-        width: 30%;
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        width: 50%;
     }
-
 }
 
-@media (max-width: 524px) {
+@media (max-width: 400px) {
+
+    .dubble_block {
+        display: block;
+    }
+
+    #photosabout {
+        justify-content: center;
+    }
+
+    #map {
+        display: flex;
+        justify-content: flex-end;
+        width: 85%;
+    }
+
+    #content {
+        margin-top: -10px;
+    }
+    
     #logo {
         visibility: hidden;
         display: none;
     }
     
     #logo1 {
+        margin-top: 5px;
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 10px;
+        width: 50%;
+    }
+        
+    #logo2 {
         visibility: hidden;
         display: none;
     }
 
-    #logo2 {
-        float: left;
-        width: 10%;
+    #lang {
+        display: none;
     }
 
     #about {
-        visibility: hidden;
-        display: none;
+        margin-left: 1px;
+        display: flex;
+        justify-content: center;
+        width: 50%;
     }
 
-    #menu {
-        float: right;
-        width: 30%;
-    }
-    
     #theme {
-        float: right;
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 10px;
+        margin-bottom: 10px;
         width: 50%;
     }
 }
+
 
 #theme>a {
     margin-top: 10px;
@@ -218,18 +237,18 @@ header > div#logo1 > a > span {
     padding-top: 10px;
 }
 
-
 #about > a {
     margin: 0 5%;
 }
 
-wrapper {
+#wrapper {
     display: flex;
     flex-direction: column;
     height: 100%;
+    padding-top: 70px; 
 }
 
-footer {
+#mainn {
     float: left;
     background-color: rgba(0, 0, 0, 0.432);
     width: 99.4%;
@@ -247,7 +266,7 @@ footer {
 
 #sitename > h1 {
     font-family: "Merriweather", serif;
-    font-size: 2.5em
+    font-size: 2.5em;
 }
 
 #sitename > h3 {
@@ -258,13 +277,7 @@ footer {
     width: 100%;
 }
 
-#gallery1 {
-    color: #ccc;
-    font-family: "Dela Gothic One", sans-serif;
-    margin-top: 50px;
-    margin-left: 30px;
-}
-
+#gallery1,
 #contacts1 {
     color: #ccc;
     font-family: "Dela Gothic One", sans-serif;
@@ -272,13 +285,11 @@ footer {
     margin-left: 30px;
 }
 
-.dubble_block {
-    display: flex;
-}
 
 #map {
     margin-top: 20px;
     margin-left: 30px;
+    width: 90%;
 }
 
 .link1 {
@@ -290,29 +301,26 @@ footer {
 #about_team {
     margin-left: 30px;
     color: #ccc;
-    float: left;
-    width: 50%;
-    display: inline-block;
+    flex: 1; 
 }
 
 #photosabout {
     margin-left: 10%;
     margin-right: 5px;
     color: #ccc;
-    float: right;
-    width: 50%;
-    display: inline-block;
+    flex: 1; 
 }
 
 #contacts {
-    margin-left: 10%;
+    margin-left: 20px;
+    margin-right: 20%;
 }
 
 #photosabout > img {
     margin-top: 10px;
 }
 
-#about_team > h1{
+#about_team > h1 {
     font-family: "Dela Gothic One", sans-serif;
 }
 
@@ -323,6 +331,7 @@ footer {
 
 #qwert2 {
     margin-top: 50px;
+    margin-bottom: 50px;
     font-family: "Dela Gothic One", sans-serif;
 }
 
@@ -338,12 +347,13 @@ footer {
     margin-top: 1rem;
     margin-bottom: 1rem;
     padding-left: 0;
-  }
-  .social-icons>li {
-    margin-left: ;
+}
+
+.social-icons>li {
     margin-right: 0.25rem;
-  }
-  .social-icons a {
+}
+
+.social-icons a {
     position: relative;
     background-color: #eee;
     display: block;
@@ -355,11 +365,13 @@ footer {
     width: 2.5rem;
     height: 2.5rem;
     border-radius: .25rem;
-  }
-  .social-icons a:hover {
+}
+
+.social-icons a:hover {
     background-color: #e0e0e0;
-  }
-  .social-icons a::before {
+}
+
+.social-icons a::before {
     content: "";
     position: absolute;
     width: 1.2rem;
@@ -368,17 +380,20 @@ footer {
     top: .65rem;
     background: transparent no-repeat center center;
     background-size: 100% 100%;
-  }
-  
-  .social-icons .social-icon-vk::before {
+}
+
+.social-icons .social-icon-vk::before {
     background-image: url("https://cdn-icons-png.flaticon.com/128/6422/6422212.png");
-  }
-  .social-icons .social-icon-telegram::before {
+}
+
+.social-icons .social-icon-telegram::before {
     background-image: url("https://cdn-icons-png.flaticon.com/128/6422/6422206.png");
-  }
-  .social-icons .social-icon-youtube::before {
+}
+
+.social-icons .social-icon-youtube::before {
     background-image: url("https://cdn-icons-png.flaticon.com/128/6422/6422215.png");
-  }
+}
+
 
 .video-background {
     position: fixed;
@@ -390,7 +405,6 @@ footer {
     height: auto;
     z-index: -1000;
     overflow: hidden;
-    
 }
 
 #myVideo {
@@ -398,5 +412,46 @@ footer {
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
+    object-fit: cover; 
     z-index: -100;
 }
+
+#footer {
+    
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 10px;
+    margin-left: -5px;
+    background-color: rgba(0, 0, 0, 0.767);
+    width: 100%;
+}
+#pipec {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    margin: 12px;
+    height: 30px;
+    width: 60px;
+    border-radius: 10px;
+    background: #333;
+    justify-content: center;
+    box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #444,
+        inset -5px -5px 10px #222;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    color: rgb(161, 161, 161);  
+}
+
+button:hover {
+    box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222,
+    inset -5px -5px 10px #444;
+    transform: translateY(-3px);
+}
+
